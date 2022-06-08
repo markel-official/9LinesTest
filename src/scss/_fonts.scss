@@ -1,0 +1,27 @@
+// stylelint-disable no-empty-source
+// @include font-face("../fonts/FontName/FontName", "FontName", 400, normal);
+
+@font-face {
+	src: url("../fonts/SFProDisplay-Bold.eot");
+	src:
+		url("../fonts/SFProDisplay-Bold.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/SFProDisplay-Bold.woff2") format("woff2"),
+		url("../fonts/SFProDisplay-Bold.woff") format("woff"),
+		url("../fonts/SFProDisplay-Bold.ttf") format("truetype");
+	font-family: "San Francisco Pro Display";
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	src: url("../fonts/SFProDisplay-Regular.eot");
+	src:
+		url("../fonts/SFProDisplay-Regular.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/SFProDisplay-Regular.woff2") format("woff2"),
+		url("../fonts/SFProDisplay-Regular.woff") format("woff"),
+		url("../fonts/SFProDisplay-Regular.ttf") format("truetype");
+	font-family: "San Francisco Pro Display";
+	font-weight: 400;
+	font-style: normal;
+}

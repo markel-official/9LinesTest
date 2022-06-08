@@ -1,0 +1,34 @@
+header.header
+    .container
+        .header__container
+            a.logo(href="#!")
+                picture.logo__pic
+                    source(type="image/png", srcset=`${baseDir}images/logo.png 1x, ${baseDir}images/logo@2.png 2x`)
+                    source(type="image/webp", srcset=`${baseDir}images/logo.webp 1x, ${baseDir}images/logo@2.webp 2x`)
+                    img(src=`${baseDir}images/logo.png`, srcset=`${baseDir}images/logo@2.png 2x`, alt="Лого")
+
+            nav.menu.js-menu
+                ul.menu-list
+                    li.menu-list__item
+                        include ../includes/svg/menu-item-active.html
+                        a.menu-list__item-link.js-target-pointer(href="#intro" data-target-to="intro")
+                            | Резюме
+                    li.menu-list__item
+                        include ../includes/svg/menu-item-active.html
+                        a.menu-list__item-link.js-target-pointer(href="#about" data-target-to="about")
+                            | О себе
+                    li.menu-list__item
+                        include ../includes/svg/menu-item-active.html
+                        a.menu-list__item-link.js-target-pointer(href="#skills" data-target-to="skills")
+                            | Навыки
+                picture.menu__pic
+                    source(type="image/png", srcset=`${baseDir}images/menu-pic.png 1x, ${baseDir}images/menu-pic@2.png 2x`)
+                    source(type="image/webp", srcset=`${baseDir}images/menu-pic.webp 1x, ${baseDir}images/menu-pic@2.webp 2x`)
+                    img(src=`${baseDir}images/menu-pic.png`, srcset=`${baseDir}images/menu-pic@2.png 2x`, alt="")
+                
+                .close-btn.js-close-menu
+                    img.close-btn__icon(src=`${baseDir}images/close-icon.svg` alt="Закрыть меню")
+            
+            .burger-menu.js-open-menu
+                img.burger-menu__icon(src=`${baseDir}images/burger-icon.svg` alt="Открыть меню")
+

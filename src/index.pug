@@ -1,0 +1,19 @@
+extends pug/base
+
+prepend vars
+//-
+
+append vars
+//-
+
+block content
+    include pug/components/preloader
+    
+    include pug/components/header
+    #scroll-container(data-scroll-container)
+        include pug/pages/home
+        
+        include pug/components/footer
+
+    include pug/components/progress-tracker
+

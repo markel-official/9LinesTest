@@ -1,0 +1,23 @@
+// Skills section styles
+.skills__title {
+	margin-bottom: 30px;
+}
+
+.skills__row {
+	display: grid;
+	column-gap: 20px;
+	grid-template-columns: repeat(12, 1fr);
+	min-width: 0; // Fix for bug
+	row-gap: 20px;
+}
+
+.skill {
+	grid-column: span 3;
+}
+
+.skill__name {
+	margin-bottom: 6px;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.2;
+}

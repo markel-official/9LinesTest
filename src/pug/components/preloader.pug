@@ -1,0 +1,6 @@
+.preloader(aria-hidden="true")
+    .preloader__pic-wrapper.js-person
+        picture.preloader__pic.js-preloader-image
+            source.js-preloader-image(type="image/png", srcset=`${baseDir}images/preloader-pic.png 1x, ${baseDir}images/preloader-pic@2.png 2x`)
+            source.js-preloader-image(type="image/webp", srcset=`${baseDir}images/preloader-pic.webp 1x, ${baseDir}images/preloader-pic@2.webp 2x`)
+            img.js-preloader-image(src=`${baseDir}images/preloader-pic.png`, srcset=`${baseDir}images/preloader-pic@2.png 2x`, alt="Preloader")

@@ -1,0 +1,258 @@
+/*
+I decided to use custom media queries since I thought it would be better.
+However if in NineLines you have strict rules of only using templates then further I will
+use only provided templates
+*/
+
+// 1200
+@media screen and (max-width: 1200px) {
+	.about__row {
+		flex-wrap: wrap;
+	}
+
+	.about__col-experience {
+		flex-basis: 50%;
+	}
+
+	.about__col-animation {
+		flex-basis: 50%;
+	}
+
+	.about__col-education {
+		position: relative;
+		z-index: 1;
+		flex-basis: 100%;
+		margin-top: 40px;
+		max-width: 100%;
+	}
+
+	.education-degrees {
+		display: grid;
+		column-gap: 20px;
+		grid-template-columns: repeat(12, 1fr);
+		row-gap: 20px;
+	}
+
+	.education-degree {
+		grid-column: span 3;
+	}
+
+	.about__col-education {
+		padding: 0;
+	}
+
+	.education-degree + .education-degree {
+		margin-top: 0;
+	}
+}
+
+// 1100
+@media screen and (max-width: 1100px) {
+	.intro__col-contacts {
+		flex: 0 1 auto;
+	}
+
+	.header {
+		padding-top: 50px;
+	}
+}
+
+// 1024
+@media screen and (max-width: 1024px) {
+	.intro__row {
+		flex-wrap: wrap;
+
+		& > * {
+			flex-basis: 100%;
+		}
+	}
+
+	.intro__col-contacts {
+		margin-top: 20px;
+	}
+
+	.intro__title {
+		font-size: 28px;
+	}
+
+	.menu__pic {
+		display: block;
+		flex: 0 1 auto;
+		align-self: center;
+		width: 500px;
+		max-width: 100%;
+	}
+
+	.close-btn {
+		position: absolute;
+		right: 20px;
+		top: 30px;
+		display: block;
+	}
+
+	.burger-menu {
+		display: block;
+	}
+
+	.menu {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 60px 40px 0;
+		background-color: $color-gray;
+		opacity: 0;
+		transform: translate3d(0, 100%, 0);
+		transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+		pointer-events: none;
+		touch-action: none;
+	}
+
+	.menu--open {
+		opacity: 1;
+		transform: translate3d(0, 0%, 0);
+		pointer-events: all;
+	}
+
+	.menu-list {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.menu-list__item + .menu-list__item {
+		margin-top: 40px;
+		margin-left: 0;
+	}
+
+	.menu-list__item-link {
+		font-size: 26px;
+	}
+
+	.menu-list__item {
+		flex: 0 1 auto;
+	}
+}
+
+// 900
+@media screen and (max-width: 900px) {
+	.education-degree {
+		grid-column: span 4;
+	}
+}
+
+// On this breakpoint stop about animation
+// 750
+@media screen and (max-width: 750px) {
+	.education-degree {
+		grid-column: span 6;
+	}
+
+	.skill {
+		grid-column: span 6;
+	}
+
+	.about__col-experience {
+		flex-basis: 100%;
+		max-width: 100%;
+	}
+
+	.about__col-animation {
+		flex-basis: 100%;
+		margin-top: 40px;
+		max-width: 100%;
+	}
+
+	.about__pic-wrapper {
+		position: relative;
+		left: initial;
+		top: initial;
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		width: 200px;
+		height: 200px;
+		max-width: 100%;
+		transform: translate3d(0%, 0, 0);
+	}
+
+	.about__pic-objects {
+		transform: translate(-49%, -60%) scale(40%);
+
+		// position: absolute;
+		// left: 50%;
+		// top: 50%;
+		// -webkit-transform: translate(-49%, -82%);
+		// -ms-transform: translate(-49%, -82%);
+		// transform: translate(-49%, -82%);
+		// width: 283px;
+		// height: 283px;
+		// // width: 183px;
+		// // height: 183px;
+	}
+
+	.intersection-svg-wrapper--experience {
+		transform: translateY(104px);
+	}
+
+	.intro__title {
+		white-space: initial;
+	}
+}
+
+// 650
+@media screen and (max-width: 650px) {
+	.intro__container {
+		padding-top: 130px;
+		padding-bottom: 40px;
+	}
+
+	.intersection-svg-wrapper {
+		transform: translateY(150px);
+	}
+
+	.header {
+		padding-top: 20px;
+	}
+
+	.logo__pic {
+		width: 80px;
+		height: 80px;
+	}
+
+	.header--active {
+		.logo {
+			transform: scale3d(0.8, 0.8, 1) translate3d(0, -50%, 0);
+		}
+	}
+
+	.experience__company-info {
+		& > * {
+			display: block;
+		}
+	}
+
+	* + .experience__company-description {
+		margin-top: 2px;
+		margin-left: 0;
+	}
+
+	#canvas-container {
+		height: 200px;
+	}
+
+	.about {
+		padding-bottom: 60px;
+	}
+}
+
+// 600
+@media screen and (max-width: 600px) {
+	.skill {
+		grid-column: span 12;
+	}
+}

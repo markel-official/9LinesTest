@@ -1,0 +1,157 @@
+.header {
+	// display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 101;
+	align-items: center;
+	padding-top: 100px;
+	padding-bottom: 10px;
+
+	/*
+    In order to achieve better performance
+    we are not changing paddings or height but just scaling this pseudo-element
+    since our design allows us to do so
+    */
+	/*
+    I didn't animate height, to achieve smoother animation
+    p.s. I've just came up with this practice, if you find it wrong then I will not use it anymore.
+    However I thought that in this particular case I could use it.
+    */
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		background-color: $color-gray;
+		transform: scale3d(1, 1, 1);
+		transform-origin: center top;
+		transition: transform 0.6s ease-in;
+		pointer-events: none;
+	}
+}
+
+.header__container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.logo {
+	line-height: 1;
+	transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+	transition: transform 0.4s ease-out;
+}
+
+.logo__pic {
+	width: 150px;
+	height: 150px;
+}
+
+.menu-list {
+	display: flex;
+}
+
+.menu-list__item {
+	position: relative;
+	cursor: pointer;
+}
+
+.menu-list__item + .menu-list__item {
+	margin-left: 32px;
+}
+
+.menu-list__svg {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: -1;
+	width: 91px;
+	height: 145px;
+
+	// transform-origin: center;
+	opacity: 0;
+	transform: translate(-59%, -64%) scale3d(0, 0, 1);
+	transform-origin: right top;
+	transition: opacity 0.3s ease-out, transform 0.6s ease-out;
+	pointer-events: none;
+}
+
+.menu-list__item-link {
+	font-weight: 700;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 1.2;
+}
+
+.menu-list__item--active,
+.menu-list__item:not(.menu-list__item--active):hover,
+.menu-list__item:not(.menu-list__item--active):focus {
+	.menu-list__svg {
+		opacity: 1;
+		transform: translate(-59%, -64%) scale3d(1, 1, 1);
+		transform-origin: left bottom;
+	}
+}
+
+.menu__pic {
+	display: none;
+}
+
+.close-btn {
+	display: none;
+	line-height: 1;
+	transition: opacity 0.4s ease-out;
+
+	&__icon {
+		width: 20px;
+		height: 20px;
+	}
+
+	&:hover,
+	&:focus {
+		opacity: 0.65;
+	}
+}
+
+.burger-menu {
+	display: none;
+	transition: opacity 0.4s ease-out;
+
+	&__icon {
+		width: 26px;
+		height: 18px;
+	}
+
+	&:hover,
+	&:focus {
+		opacity: 0.65;
+	}
+}
+
+/*
+When we scroll down more than certain amount then set "header--active" to the header
+*/
+.header--active {
+	&::before {
+		transform: scale3d(1, 0.9, 1);
+	}
+
+	.logo {
+		transform: scale3d(0.5, 0.5, 1) translate3d(0, -100%, 0);
+	}
+
+	/*
+    No transition here, since changing height will cause repainting.
+    Therefore I didn't animate height, to achieve smoother animation
+    p.s. I've just came up with this practice, if you find it wrong then I will not use it anymore.
+    However I thought that in this particular case I could use it.
+    */
+	.header__container {
+		height: 50px;
+	}
+}

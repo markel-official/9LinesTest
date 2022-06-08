@@ -1,0 +1,75 @@
+// Intro section styles
+
+.intro__container {
+	z-index: 1;
+	padding-top: 290px;
+	padding-bottom: 200px;
+}
+
+.intro__row {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.intro__col-content {
+	flex: 1 1 auto;
+	max-width: 560px;
+}
+
+.intro__col-contacts {
+	flex: 0 1 270px;
+	max-width: 100%;
+}
+
+.intro__title {
+	margin-top: 0;
+	margin-bottom: 30px;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 36px;
+	line-height: 140%;
+	white-space: nowrap;
+}
+
+.intro__contact-data {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
+}
+
+.intro__contact-link + .intro__contact-link {
+	margin-top: 10px;
+}
+
+.intro__contact-socials {
+	display: flex;
+	align-items: center;
+}
+
+.intro__social-link {
+	line-height: 1;
+}
+
+.intro__social-link + .intro__social-link {
+	margin-left: 20px;
+}
+
+.intro__social-icon {
+	width: 25px;
+	height: 25px;
+
+	rect {
+		fill: #282a33;
+		opacity: 0.69;
+		transition: fill 0.35s ease-out, opacity 0.35s ease-out;
+	}
+}
+
+.intro__social-link:hover,
+.intro__social-link:focus {
+	.intro__social-icon rect {
+		fill: #2140c8;
+		opacity: 1;
+	}
+}

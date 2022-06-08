@@ -1,0 +1,78 @@
+.progress-tracker {
+	position: fixed;
+	right: 25px;
+	bottom: 25px;
+	z-index: 100;
+	border: 1px solid currentColor;
+	border-radius: 50%;
+	width: 48px;
+	height: 48px;
+	transition: opacity 0.4s ease-out;
+}
+
+.progress-tracker__top-btn {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 2;
+	opacity: 0;
+	transition: opacity 0.4s ease-out;
+	pointer-events: none;
+}
+
+.back-to-top {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	border-radius: 50%;
+	background-color: $color-gray;
+	cursor: pointer;
+}
+
+.back-to-top__icon {
+	width: 18px;
+	height: 24px;
+}
+
+.progress-tracker__progress {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background-color: $color-gray;
+	opacity: 1;
+	transition: opacity 0.3s ease-out;
+	pointer-events: all;
+}
+
+.progress-tracker__progress-text {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 100%;
+	color: currentColor;
+}
+
+.progress-tracker--full {
+	.progress-tracker__top-btn {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	.progress-tracker__progress {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&:hover {
+		opacity: 0.6;
+	}
+}

@@ -1,0 +1,49 @@
+// stylelint-disable at-rule-empty-line-before
+
+@import "root";
+@import "variables";
+@import "functions";
+@import "mixins";
+@import "sprites";
+@import "fonts";
+@import "vendor";
+@import "base";
+@import "helpers";
+@import "animation";
+
+@import "components/preloader";
+@import "components/header";
+@import "components/footer";
+@import "components/progressTracker";
+
+@import "pages/home";
+
+/*
+Fix bug with locomotive-scroll
+*/
+// html.has-scroll-smooth {
+// 	backface-visibility: hidden;
+// 	transform: translateZ(0);
+// }
+
+// [data-load-container] {
+// 	position: fixed;
+// 	top: 0;
+// 	right: 0;
+// 	bottom: 0;
+// 	left: 0;
+// 	width: 100vw;
+// }
+
+.data-scroll-container {
+	perspective: 1px;
+}
+
+/*
+Media queries
+
+I decided to use custom media queries since I thought it would be better.
+However if in NineLines you have strict rules of only using templates then further I will
+use only provided templates
+*/
+@import "media";
